@@ -319,13 +319,10 @@ Podgląd grafiki
 <br>
 
 
-<button>
-
+<button onclick="addCart()">
 Dodaj do koszyka
-
 </button>
 
-
 </div>
 
 
@@ -336,7 +333,43 @@ Dodaj do koszyka
 
 
 
+function addCart(){
 
+
+let item={
+
+product:"Bluza personalizowana",
+
+size:document.querySelectorAll("select")[1].value,
+
+color:"wybrany kolor",
+
+text:document.querySelector("input").value,
+
+image:document.getElementById("imagePreview").src
+
+};
+
+
+
+let cart=JSON.parse(localStorage.getItem("cart")) || [];
+
+
+cart.push(item);
+
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+
+alert("Dodano do koszyka!");
+
+window.location.href="koszyk.html";
+
+
+}
 <script>
 
 
@@ -356,3 +389,4 @@ image.src=URL.createObjectURL(event.target.files[0]);
 </body>
 
 </html>
+<a href="koszyk.html">🛒 Koszyk</a>
