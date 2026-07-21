@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personalizacja | Custom Wear</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+
+body{
+
+background:#050505;
+color:white;
+}
+
+
+nav{
+
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+background:#000;
+border-bottom:1px solid #222;
+
+}
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:25px;
+
+}
+
+
+
+.container{
+
+max-width:1100px;
+margin:80px auto;
+padding:20px;
+
+}
+
+
+
+h1{
+
+font-size:55px;
+margin-bottom:40px;
+
+}
+
+
+
+.box{
+
+background:#111;
+padding:35px;
+border-radius:25px;
+margin-bottom:30px;
+
+}
+
+
+
+label{
+
+display:block;
+margin-top:20px;
+margin-bottom:10px;
+color:#aaa;
+
+}
+
+
+
+select,input,textarea{
+
+width:100%;
+padding:15px;
+background:#050505;
+border:1px solid #333;
+color:white;
+border-radius:10px;
+
+}
+
+
+
+.colors{
+
+display:flex;
+gap:15px;
+
+}
+
+
+.color{
+
+width:45px;
+height:45px;
+border-radius:50%;
+cursor:pointer;
+border:2px solid white;
+
+}
+
+
+.black{
+background:black;
+}
+
+
+.white{
+background:white;
+}
+
+
+.gray{
+background:#555;
+}
+
+
+
+button{
+
+margin-top:30px;
+padding:18px 40px;
+border:0;
+border-radius:40px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+
+
+.preview{
+
+text-align:center;
+
+}
+
+
+
+#imagePreview{
+
+max-width:250px;
+margin-top:20px;
+border-radius:15px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<nav>
+
+<h2>CUSTOM WEAR</h2>
+
+
+<div>
+
+<a href="index.html">Start</a>
+
+<a href="personalizacja.html">
+Personalizacja
+</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+<div class="container">
+
+
+<h1>
+Zaprojektuj swoje ubranie
+</h1>
+
+
+
+<div class="box">
+
+
+<label>
+Wybierz produkt
+</label>
+
+
+<select>
+
+<option>Bluza Oversize</option>
+<option>Koszulka Premium</option>
+<option>Komplet Streetwear</option>
+
+</select>
+
+
+
+
+<label>
+Rozmiar
+</label>
+
+
+<select>
+
+<option>XS</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
+
+</select>
+
+
+
+
+<label>
+Kolor
+</label>
+
+
+<div class="colors">
+
+<div class="color black"></div>
+
+<div class="color white"></div>
+
+<div class="color gray"></div>
+
+</div>
+
+
+
+
+<label>
+Twój napis
+</label>
+
+
+<input 
+placeholder="np. własny nick, logo, tekst"
+>
+
+
+
+<label>
+Opis projektu
+</label>
+
+
+<textarea rows="5"
+placeholder="Opisz jak ma wyglądać ubranie..."
+></textarea>
+
+
+
+<label>
+Dodaj grafikę
+</label>
+
+
+<input 
+type="file"
+accept="image/*"
+onchange="previewImage(event)"
+>
+
+
+
+</div>
+
+
+
+
+<div class="box preview">
+
+
+<h2>
+Podgląd grafiki
+</h2>
+
+
+<img id="imagePreview">
+
+
+
+<br>
+
+
+<button>
+
+Dodaj do koszyka
+
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function previewImage(event){
+
+let image=document.getElementById("imagePreview");
+
+image.src=URL.createObjectURL(event.target.files[0]);
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
