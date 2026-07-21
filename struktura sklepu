@@ -1,0 +1,25 @@
+personal-shop/
+│
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── ProductCard.jsx
+│   │   └── Hero.jsx
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Shop.jsx
+│   │   ├── Product.jsx
+│   │   ├── Customize.jsx
+│   │   ├── Gallery.jsx
+│   │   └── Contact.jsx
+│   │
+│   ├── data/
+│   │   └── products.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│
+├── package.json
+└── index.html
