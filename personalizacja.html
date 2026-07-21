@@ -248,16 +248,12 @@ Rozmiar
 Kolor
 </label>
 
+<div class="color black" onclick="chooseColor('Czarny')"></div>
 
-<div class="colors">
+<div class="color white" onclick="chooseColor('Biały')"></div>
 
-<div class="color black"></div>
+<div class="color gray" onclick="chooseColor('Szary')"></div>
 
-<div class="color white"></div>
-
-<div class="color gray"></div>
-
-</div>
 
 
 
@@ -333,14 +329,13 @@ Dodaj do koszyka
 
 function addCart(){
 
-
 let item={
 
 product:"Bluza personalizowana",
 
 size:document.querySelectorAll("select")[1].value,
 
-color:"wybrany kolor",
+color:selectedColor,
 
 text:document.querySelector("input").value,
 
@@ -366,9 +361,18 @@ alert("Dodano do koszyka!");
 
 window.location.href="koszyk.html";
 
+}
+
+<script>
+
+let selectedColor="Czarny";
+
+
+function chooseColor(color){
+
+selectedColor=color;
 
 }
-<script>
 
 
 function previewImage(event){
@@ -380,11 +384,48 @@ image.src=URL.createObjectURL(event.target.files[0]);
 }
 
 
-</script>
 
+function addCart(){
+
+let item={
+
+product:"Bluza personalizowana",
+
+size:document.querySelectorAll("select")[1].value,
+
+color:selectedColor,
+
+text:document.querySelector("input").value,
+
+image:document.getElementById("imagePreview").src
+
+};
+
+
+
+let cart=JSON.parse(localStorage.getItem("cart")) || [];
+
+
+cart.push(item);
+
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+
+alert("Dodano do koszyka!");
+
+window.location.href="koszyk.html";
+
+}
+
+
+</script>
 
 
 </body>
 
 </html>
-<a href="koszyk.html">🛒 Koszyk</a>
+
