@@ -322,15 +322,22 @@ Dodaj do koszyka
 
 <script>
 
-let selectedColor = "Czarny";
+function chooseColor(color, element){
+
+selectedColor=color;
 
 
-function chooseColor(color){
+let colors=document.querySelectorAll(".color");
 
-selectedColor = color;
 
-}
+colors.forEach(c=>{
 
+c.classList.remove("active");
+
+});
+
+
+element.classList.add("active");
 
 
 function previewImage(event){
