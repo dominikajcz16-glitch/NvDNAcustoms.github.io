@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Koszyk | Custom Wear</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#050505;
+color:white;
+}
+
+nav{
+padding:25px 8%;
+background:#000;
+border-bottom:1px solid #222;
+display:flex;
+justify-content:space-between;
+}
+
+a{
+color:white;
+text-decoration:none;
+}
+
+.container{
+max-width:900px;
+margin:80px auto;
+padding:20px;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:20px;
+margin-top:20px;
+}
+
+button{
+margin-top:20px;
+padding:15px 35px;
+border:0;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+}
+
+img{
+width:150px;
+border-radius:15px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<h2>CUSTOM WEAR</h2>
+
+<a href="index.html">
+Start
+</a>
+
+</nav>
+
+
+
+<div class="container">
+
+
+<h1>
+Twój koszyk
+</h1>
+
+
+<div id="cart"></div>
+
+
+<button onclick="order()">
+
+Przejdź do zamówienia
+
+</button>
+
+
+</div>
+
+
+
+<script>
+
+
+let cart=document.getElementById("cart");
+
+
+let items=JSON.parse(localStorage.getItem("cart")) || [];
+
+
+
+if(items.length===0){
+
+cart.innerHTML="<div class='card'>Koszyk jest pusty</div>";
+
+}
+
+else{
+
+
+items.forEach(item=>{
+
+
+cart.innerHTML+=`
+
+<div class="card">
+
+<h2>${item.product}</h2>
+
+<p>Rozmiar: ${item.size}</p>
+
+<p>Kolor: ${item.color}</p>
+
+<p>Napis: ${item.text}</p>
+
+
+${item.image ?
+
+`<img src="${item.image}">`
+
+:""}
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+
+
+function order(){
+
+alert("Formularz zamówienia dodamy w kolejnym kroku!");
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
