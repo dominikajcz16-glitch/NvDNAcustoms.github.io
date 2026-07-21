@@ -320,50 +320,30 @@ Dodaj do koszyka
 </div>
 
 
+<a href="koszyk.html">
+🛒 Koszyk
+</a>
+
+
+
 <script>
 
-function chooseColor(color, element){
-
-selectedColor=color;
-
-
-let colors=document.querySelectorAll(".color");
-
-
-colors.forEach(c=>{
-
-c.classList.remove("active");
-
-});
-
-
-element.classList.add("active");
-
-
-function previewImage(event){
-
-let image = document.getElementById("imagePreview");
-
-image.src = URL.createObjectURL(event.target.files[0]);
-
-}
-
+let selectedColor = "Czarny";
 
 
 function addCart(){
 
-
 let item = {
 
-product: "Bluza personalizowana",
+product:"Bluza personalizowana",
 
-size: document.querySelectorAll("select")[1].value,
+size:document.querySelectorAll("select")[1].value,
 
-color: selectedColor,
+color:selectedColor,
 
-text: document.querySelector("input").value,
+text:document.querySelector("input").value,
 
-image: document.getElementById("imagePreview").src
+image:document.getElementById("imagePreview").src
 
 };
 
@@ -375,19 +355,16 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 cart.push(item);
 
 
-
 localStorage.setItem(
 "cart",
 JSON.stringify(cart)
 );
 
 
-
 alert("Dodano do koszyka!");
 
 
-
-window.location.href = "koszyk.html";
+window.location.href="koszyk.html";
 
 
 }
