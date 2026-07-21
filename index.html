@@ -1,60 +1,245 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NvDNA Customs</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: white;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            background: #ff0077;
-            padding: 20px;
-        }
+<title>Custom Wear | Personalizowane ubrania</title>
 
-        h1 {
-            margin: 0;
-        }
+<style>
 
-        .hero {
-            padding: 80px 20px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-        }
+body{
+background:#050505;
+color:white;
+}
 
-        .btn:hover {
-            background: #ddd;
-        }
-    </style>
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+background:#000;
+border-bottom:1px solid #222;
+}
+
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+}
+
+
+.hero{
+
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+}
+
+
+.hero h1{
+
+font-size:80px;
+font-weight:900;
+
+}
+
+
+.hero p{
+
+font-size:22px;
+color:#aaa;
+margin-top:20px;
+
+}
+
+
+button{
+
+margin-top:40px;
+padding:18px 45px;
+border-radius:40px;
+border:none;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+
+
+.products{
+
+padding:80px 8%;
+
+}
+
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+.card{
+
+background:#111;
+padding:20px;
+border-radius:20px;
+
+}
+
+
+.card img{
+
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:15px;
+
+}
+
+
+@media(max-width:800px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+
+.hero h1{
+font-size:45px;
+}
+
+}
+
+</style>
+
 </head>
+
+
 <body>
 
-<header>
-    <h1>NvDNA Customs</h1>
-</header>
+
+<nav>
+
+<h2>CUSTOM WEAR</h2>
+
+
+<div>
+
+<a href="#">Start</a>
+<a href="#">Sklep</a>
+<a href="#">Personalizacja</a>
+<a href="#">Kontakt</a>
+
+</div>
+
+</nav>
+
+
 
 <section class="hero">
-    <h2>Witaj na mojej stronie!</h2>
-    <p>Tworzę własne projekty i modyfikacje.</p>
 
-    <a href="#" class="btn">Dowiedz się więcej</a>
+
+<div>
+
+<h1>
+STWÓRZ
+<br>
+SWOJE UBRANIE
+</h1>
+
+
+<p>
+Bluzy • Koszulki • Komplety premium
+</p>
+
+
+<button>
+Zaprojektuj teraz
+</button>
+
+
+</div>
+
+
 </section>
 
+
+
+
+<section class="products">
+
+
+<h1>
+Najpopularniejsze
+</h1>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7">
+
+<h2>Bluza Oversize</h2>
+
+<p>od 199 zł</p>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+
+<h2>Koszulka Custom</h2>
+
+<p>od 99 zł</p>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3">
+
+<h2>Komplet Premium</h2>
+
+<p>od 299 zł</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
 </body>
+
 </html>
